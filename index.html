@@ -5,7 +5,7 @@
   <title>
     Text Particles
   </title>
-  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta property="og:title" content="Text Particles" />
   <meta property="og:description" content="Some cool canvas pixel manipulation" />
   <meta property="og:image" content="http://william.hoza.us/images/text-small.png" />
@@ -15,25 +15,19 @@
           font-family: 'FFMarkPro Black';
           src: url('font/FFMarkPro-Black.eot');
           src: url('font/FFMarkPro-Black.eot?#iefix') format('embedded-opentype'),
-          url('font/FFMarkPro-Black.woff2') format('woff2'),
           url('font/FFMarkPro-Black.woff') format('woff'),
           url('font/FFMarkPro-Black.svg#webfont') format('svg');
           font-weight: normal;
           font-style: normal; }
 		  
-		  h1 { font-family: 'FFMarkPro Black', serif }
-          h2 { font-family: 'FFMarkPro Black', serif }
-          h3 { font-family: 'FFMarkPro Black', serif }
-          h4 { font-family: 'FFMarkPro Black', serif }
-          h5 { font-family: 'FFMarkPro Black', serif }
-          h6 { font-family: 'FFMarkPro Black', serif }
-
+		  body { font-family: 'FFMarkPro Black', serif }
+		  
+		  
     </style>
-  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 
 <body style="margin:0px;">
-
   <canvas id="canv" onmousemove="canv_mousemove(event);" onmouseout="mx=-1;my=-1;">
     you need a canvas-enabled browser, such as Google Chrome
   </canvas>
@@ -42,7 +36,6 @@
   <textarea readonly id="wordsTxt" style="position:absolute;left:-100;top:-100;" onblur="init();" onkeyup="init();" onclick="init();"></textarea>
   
   <script type="text/javascript">
-      
     var l=document.location + "";
     l=l.replace(/%20/g," ");
     var index=l.indexOf('?t=');
@@ -196,7 +189,7 @@
         wordWidth=0;
         fontSize-=5;
 		wordCtx.fillStyle = "red";
-        wordCtx.font=fontSize+"px FFMarkPro Black";
+        wordCtx.font="200px FFMarkPro Black";
         for(var i=0;i<txt.length;i++)
         {
           var w=wordCtx.measureText(txt[i]).width;
@@ -262,7 +255,15 @@
     body_resize();
     timer();
   </script>
-  
+
+<script>
+
+    setTimeout(function() {
+	init();
+	
+	}, 1);
+
+</script>
 
 </body>
 
